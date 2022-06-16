@@ -37,7 +37,8 @@ body{
     font-weight: 400;
 }
 
-.background-left{
+body::after{
+    content: "";
     width: 41.5%;
     height: 93vh;
     background-image: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
@@ -49,7 +50,8 @@ body{
     z-index: -1;
 }
 
-.background-right{
+body::before{
+    content: "";
     width: 28%;
     height: 85vh;
     background-color: hsla(206, 6%, 79%, 0.1);;
@@ -59,26 +61,15 @@ body{
     bottom: 0;
     right: -0;
     z-index: 0;
-}
-
-.border-part{
-    width: 140px;
-    height: 33px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-color: var(--White);
-    position: absolute;
-    left: 70px;
-}
+} 
 
 .container{
     display: flex;
     width: 40rem;
     position: relative;
-    margin: -25px auto 25px auto;
 }
 
-
+/* PHONE SECTION  */
 .phone{
     background-color: var(--Light-Grayish-Violet);
     width: 42%;
@@ -88,7 +79,17 @@ body{
     margin: auto 0 auto 10px;
 }
 
+.phone-camera{
+    width: 140px;
+    height: 33px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: var(--White);
+    position: absolute;
+    left: 70px;
+}
 
+/* HERO */
 .sender{
     font-size: 10px;
     width: 100%;
@@ -98,6 +99,12 @@ body{
     border-top-right-radius: 20px;
     display: flex;
     justify-content: space-between;
+}
+
+.sender ion-icon{
+    font-size: 16px;
+    color: var(--White);
+    margin-top: 5px;
 }
 
 .sender h2{
@@ -137,10 +144,11 @@ hr{
     margin-top: 10px;
 }
 
+/* CHAT BODY  */
 .message{
     display: flex;
     flex-direction: column;
-    font-size: 8.5px;
+    font-size: 8.6px;
     line-height: 1.3;
 }
 
@@ -153,21 +161,23 @@ hr{
     background-color: var(--Grayish-Blue);
     padding: 6px 10px;
     margin: 5px auto;
-    border-radius: 10px;
+    border-radius: 10px 10px 10px 4px;
 }
 
 .right-message{
-    max-width: 58%;
+    display: flex;
+    flex-direction: column;
     margin: 4px 8px;
-    align-self: flex-end;
+    align-items: flex-end;
 }
 
 .right-message p{
     color: var(--Desaturated-Dark-Violet);
     background-color: var(--White);
     padding: 6px 10px;
-    margin: 5px auto;
-    border-radius: 10px;
+    margin: 5px 0;
+    border-radius: 10px 10px 4px 10px;
+    max-width: 58%;
 }
 
 .right-message img{
@@ -184,52 +194,57 @@ hr{
     margin: 3px 8px;
     width: 70%;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 10px 10px 10px 4px;
+}
+
+.pricing ion-icon{
+    font-size: 16px;
+    color: var(--Very-Light-Magenta);
 }
 
 .pricing p{
-    margin-left: -40px;
+    margin-left: -20px;
     color:  hsla(0, 0%, 100%, 0.7);
+    font-size: 10px;
+    margin-top: 3px;
 }
 
 .pricing h4{
     font-size: 12px;
 }
 
-input{
-   
-}
-
 .chat-area{
     display: flex;
     justify-content: space-between;
-    padding: 8px 15px;
+    padding: 5px 5px 5px 15px;
     background-color: var(--White);
     margin: 10px;
     border-radius: 30px;
-    font-size: 10px;
-    
+    font-size: 11px;
 }
 
 .chat-area p{
-    color: hsla(270, 7%, 64%, 0.5);
+    color: hsla(270, 7%, 64%, 0.4);
     font-weight: 400;
     margin: auto 0;
 }
 
-button{
-    background-color: var(--Very-Dark-Desaturated-Violet);
-    color: var(--White);
+.chat-area button{
     border-style: none;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    font-size: 17px;
-    font-weight: 700;
+    outline: none;
+}
+
+.chat-area ion-icon{
+    background-color: var(--Very-Dark-Desaturated-Violet);
+    color: var(--White);
+    border-radius: 50%;
+    font-size: 16px;
+    padding: 5px;
 }
 
 
-/* Desription Section  */
+/* DESCRIPTION SECTION  */
 .description{
     align-self: center;
     padding-left: 30px;
@@ -268,19 +283,14 @@ button{
         height: unset;
     }
 
-    .background-left{
+    body::after{
         width: 85%;
         height: 85vh;
         left: -190px;
     }
     
-    .background-right{
+    .body::before{
         height: 70vh;
-    }
-    
-    .border-part{
-        width: 140px;
-        left: 75px;
     }
     
     .container{
@@ -289,9 +299,14 @@ button{
         margin: 30px auto;
     }
     
-    
+    /* PHONE SECTION  */
     .phone{
         width: 85%;
+    }
+
+    .phone-camera{
+        width: 140px;
+        left: 75px;
     }
     
     .sender-name{
